@@ -1,1 +1,1 @@
-web: gunicorn grofer.wsgi
+web: gunicorn ringly.wsgi
