@@ -27,4 +27,7 @@ urlpatterns = [
     path('user/add',create_user_page, name='adduser'),
     # path('user/details/<uid>/',user_details,name='detial_user'),
     path('delete/<uid>/<key>/<url>/',delete_obj, name='delete'),    
+
+    path('ringtones/',list_ringtone, name='list_ringtone'),
+
 ]

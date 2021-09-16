@@ -128,15 +128,27 @@ STATICFILES_DIRS = (
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 
+# config = {
+#     "apiKey": "AIzaSyCvM_boGl1FEU_zkI6SDzJBbF9ZuuREtIg",
+#     "authDomain": "ringlyringtone.firebaseapp.com",
+#     "databaseURL": "https://ringlyringtone.firebaseio.com",
+#     "projectId": "ringlyringtone",
+#     "storageBucket": "ringlyringtone.appspot.com",
+#     "messagingSenderId": "792746928664",
+#     "appId": "1:792746928664:web:57596daf3f0799e87f716d",
+#     "measurementId": "G-KSLEP6H6HL"
+# }
+
+
 config = {
-    "apiKey": "AIzaSyCvM_boGl1FEU_zkI6SDzJBbF9ZuuREtIg",
-    "authDomain": "ringlyringtone.firebaseapp.com",
-    "databaseURL": "https://ringlyringtone.firebaseio.com",
-    "projectId": "ringlyringtone",
-    "storageBucket": "ringlyringtone.appspot.com",
-    "messagingSenderId": "792746928664",
-    "appId": "1:792746928664:web:57596daf3f0799e87f716d",
-    "measurementId": "G-KSLEP6H6HL"
+    "apiKey": "AIzaSyB5A_FC5ev5qlEJEo6Pgkx1VOGnr28Q1pQ",
+    "authDomain": "ringtoneapp-4fcae1.firebaseapp.com",
+    "databaseURL": "https://ringtoneapp-4fcae1.firebaseio.com",
+    "projectId": "ringtoneapp-4fcae1",
+    "storageBucket": "ringtoneapp-4fcae1.appspot.com",
+    "messagingSenderId": "312391400362",
+    "appId": "1:312391400362:web:00796e00d4e3c8725249d3",
+    "measurementId": "G-WRSYH1GBKR"
 }
 
 
@@ -170,3 +182,33 @@ config = {
 # Activate Django-Heroku.
 import django_heroku
 django_heroku.settings(locals())
+
+
+
+"""
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+
+const firebaseConfig = {
+  apiKey: "AIzaSyB5A_FC5ev5qlEJEo6Pgkx1VOGnr28Q1pQ",
+  authDomain: "ringtoneapp-4fcae1.firebaseapp.com",
+  databaseURL: "https://ringtoneapp-4fcae1.firebaseio.com",
+  projectId: "ringtoneapp-4fcae1",
+  storageBucket: "ringtoneapp-4fcae1.appspot.com",
+  messagingSenderId: "312391400362",
+  appId: "1:312391400362:web:00796e00d4e3c8725249d3",
+  measurementId: "G-WRSYH1GBKR"
+};
+
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
+
+"""

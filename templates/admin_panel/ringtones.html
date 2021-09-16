@@ -1,0 +1,61 @@
+{% extends "admin_panel/base.html" %}
+{% block midpart %}
+<div class="main-panel" id="main-panel">
+      <div class="panel-header panel-header-sm">
+      </div>
+      <div class="content">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="card">
+              <div class="card-header">
+                <h4 class="card-title"> User Lists
+                  <a class="waves-effect waves-light btn" href="/user/add">Add user</a>
+                  &nbsp;&nbsp;&nbsp;<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for name" title="Type in a id" style="margin-left: 200px;">
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" id="IdmyInput" onkeyup="IdmyFunction()" placeholder="Search for id" title="Type in a id" style="margin-left: 485px;">
+                </h4>
+              </div>
+              <div class="card-body">
+                <div class="table-responsive">
+                  <table class="table" id="myTable">
+                    <thead class="text-primary">
+                      <th>
+                        Name
+                      </th>
+                      <th>
+                        Category
+                      </th>
+                      <th class="text-right">
+                        Ringtone
+                      </th>
+                    </thead>
+                    <tbody>
+                      {% for key,val in all_ringtones.items  %}
+                      <tr>
+                        <td>
+                            {{val.ringtoneName}}
+                        </td>
+                        <td>
+                        {{val.ringtoneCategory}}
+                        </td>
+                       
+                        <td class="text-right">
+                        <!-- <a style="background-color:  #f64823" class="waves-effect waves-light btn" href="/delete/{{key}}/user/dashboard/">delete</a> -->
+                        <audio controls>
+                            <source src="{{val.ringtoneLink}}" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                          </audio> 
+                        </td>
+                      </tr>                      
+                      {% endfor %}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+
+
+{% endblock %}

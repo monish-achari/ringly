@@ -70,3 +70,9 @@ def delete_obj(request,uid,key,url):
 		category_obj.remove(token_id)
 	
 	return redirect(url)
+
+def list_ringtone(request):
+	token_id = request.session['uid']
+	template_name = 'admin_panel/ringtones.html'
+	all_ringtones = dict(db.child("Ringtone").get(token_id).val())
+	return render(request, template_name,locals())
