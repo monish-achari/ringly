@@ -76,3 +76,22 @@ def list_ringtone(request):
 	template_name = 'admin_panel/ringtones.html'
 	all_ringtones = dict(db.child("Ringtone").get(token_id).val())
 	return render(request, template_name,locals())
+
+def add_ringtone(request):
+	token_id = request.session['uid']
+	template_name = 'admin_panel/add_ringtone.html'
+	if request.method=='POST':
+		name = request.POST.get('name')
+		category_id = request.POST.get('category_id')
+		category_name = request.POST.get('category_name')
+		ring_url = request.POST.get('url')
+		ring_dict = {
+			"ringtoneCreatedDate":str(datetime.datetime.now()),
+			"ringtoneModifiedDate":str(datetime.datetime.now()),
+			"ringtoneLink":ring_url,
+			"ringtoneCategory":category_name,
+			"ringtoneCategoryId":category_id
+		}
+		db.child('Ringtone').push(ring_dict,token_id)
+		return redirect('list_ringtone')
+	return render(request, template_name,locals())

@@ -1,0 +1,65 @@
+{% extends "admin_panel/base.html" %}
+{% block midpart %}
+
+<div class="main-panel" id="main-panel">
+      <!-- Navbar -->
+      
+      <!-- End Navbar -->
+      <div class="panel-header panel-header-sm">
+      </div>
+      <div class="content">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="card">
+              <div class="card-header">
+                <h5 class="title">Add Ringtone</h5>
+              </div>
+              <div class="card-body">
+                <form method="POST">
+                 {% csrf_token %} 
+                  <div class="row">
+                    <div class="col-md-6 px-1">
+                      <div class="form-group">
+                        <label>Name</label>
+                        <input type="text" class="form-control" name="name" placeholder="ringtone name" required="true">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6 px-1">
+                      <div class="form-group">
+                        <label>Ringtone Category </label>
+                        <input type="text" class="form-control" name="ringtone_category_id" placeholder="ringtone category" required="true">
+                      </div>
+                    </div>
+                </div>
+                 <div class="row">
+                    <div class="col-md-6 px-1">
+                      <div class="form-group">
+                        <label for="exampleInputEmail1">File</label>
+                        <input type="file" class="form-control" name="url" required="true">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    
+                    <div class="col-md-6 pl-1"> 
+                      <div class="form-group">
+                        <input type="submit" class="form-control" >
+                      </div>
+                    </div>
+                  </div>
+
+                </form>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+      <footer class="footer">
+        
+      </footer>
+    </div>
+
+{% endblock %}

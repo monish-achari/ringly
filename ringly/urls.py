@@ -29,5 +29,8 @@ urlpatterns = [
     path('delete/<uid>/<key>/<url>/',delete_obj, name='delete'),    
 
     path('ringtones/',list_ringtone, name='list_ringtone'),
+    path('ringtone/add/',add_ringtone, name='addringtone'),
+
+    
 
 ]
