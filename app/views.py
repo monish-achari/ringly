@@ -86,8 +86,8 @@ def add_ringtone(request):
 		category_name = request.POST.get('category_name')
 		ring_url = request.POST.get('url')
 		ring_dict = {
-			"ringtoneCreatedDate":str(datetime.datetime.now()),
-			"ringtoneModifiedDate":str(datetime.datetime.now()),
+			"ringtoneCreatedDate":str(dt.datetime.now()),
+			"ringtoneModifiedDate":str(dt.datetime.now()),
 			"ringtoneLink":ring_url,
 			"ringtoneCategory":category_name,
 			"ringtoneCategoryId":category_id
