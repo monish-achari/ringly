@@ -82,10 +82,11 @@ def add_ringtone(request):
 	template_name = 'admin_panel/add_ringtone.html'
 	if request.method=='POST':
 		name = request.POST.get('name')
-		category_id = request.POST.get('category_id')
-		category_name = request.POST.get('category_name')
+		category_id = request.POST.get('ringtone_category_id')
+		category_name = request.POST.get('ringtone_category_id')
 		ring_url = request.POST.get('url')
 		ring_dict = {
+			"ringtoneName":name,
 			"ringtoneCreatedDate":str(dt.datetime.now()),
 			"ringtoneModifiedDate":str(dt.datetime.now()),
 			"ringtoneLink":ring_url,
@@ -95,3 +96,27 @@ def add_ringtone(request):
 		db.child('Ringtone').push(ring_dict,token_id)
 		return redirect('list_ringtone')
 	return render(request, template_name,locals())
+
+# ringtoneCategory:
+
+# ringtoneCategoryId:
+
+# ringtoneCreatedDate:
+
+# ringtoneDownloadCount:
+
+# ringtoneId:
+
+# ringtoneLink:
+
+# ringtoneModifiedDate:
+
+# ringtoneName:
+
+# ringtoneUsedAsAlarmToneCount:
+
+# ringtoneUsedAsContactToneCount:
+
+# ringtoneUsedAsFavourite:
+
+# ringtoneUsedCount: 

@@ -15,7 +15,7 @@
                 <h5 class="title">Add Ringtone</h5>
               </div>
               <div class="card-body">
-                <form method="POST">
+                <form method="POST" enctype="multipart/form-data">
                  {% csrf_token %} 
                   <div class="row">
                     <div class="col-md-6 px-1">
@@ -43,7 +43,7 @@
                   </div> -->
                   <div class="col-md-6 px-1">
                     <label >Image</label>
-                         <input type="file" class="form-control" name="files[]" id="files4">
+                         <input type="file" class="form-control" name="files[]" id="files">
                          <input type="hidden" name="url" id="url">
                        </br>
                   </div>
