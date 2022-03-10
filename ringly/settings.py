@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = '#=@ky3t=a0-v94pz87c#wjqfm*3_52%95-wwqh+936j-t_8-$m'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -140,18 +140,29 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 # }
 
 
+# config = {
+#     "apiKey": "AIzaSyB5A_FC5ev5qlEJEo6Pgkx1VOGnr28Q1pQ",
+#     "authDomain": "ringtoneapp-4fcae1.firebaseapp.com",
+#     "databaseURL": "https://ringtoneapp-4fcae1.firebaseio.com",
+#     "projectId": "ringtoneapp-4fcae1",
+#     "storageBucket": "ringtoneapp-4fcae1.appspot.com",
+#     "messagingSenderId": "312391400362",
+#     "appId": "1:312391400362:web:00796e00d4e3c8725249d3",
+#     "measurementId": "G-WRSYH1GBKR"
+# }
+
 config = {
-    "apiKey": "AIzaSyB5A_FC5ev5qlEJEo6Pgkx1VOGnr28Q1pQ",
-    "authDomain": "ringtoneapp-4fcae1.firebaseapp.com",
-    "databaseURL": "https://ringtoneapp-4fcae1.firebaseio.com",
-    "projectId": "ringtoneapp-4fcae1",
-    "storageBucket": "ringtoneapp-4fcae1.appspot.com",
-    "messagingSenderId": "312391400362",
-    "appId": "1:312391400362:web:00796e00d4e3c8725249d3",
-    "measurementId": "G-WRSYH1GBKR"
-}
+        "apiKey": "AIzaSyCcbxQJt551FouL-RrlJMbPZVS2dzHG-2s",
+        "authDomain": "cringtoneapp.firebaseapp.com",
+        "databaseURL": "https://cringtoneapp-default-rtdb.firebaseio.com",
+        "projectId": "cringtoneapp",
+        "storageBucket": "cringtoneapp.appspot.com",
+        "messagingSenderId": "39436310215",
+        "appId": "1:39436310215:web:f72df8b85c929d9c1e50e2",
+        "measurementId": "G-V8E5PS11KD"
+    }
 
-
+## ringly@gmail.com 123456
 """
 <!-- The core Firebase JS SDK is always required and must be listed first -->
 <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-app.js"></script>
@@ -206,6 +217,36 @@ const firebaseConfig = {
   measurementId: "G-WRSYH1GBKR"
 };
 
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
+
+"""
+
+
+"""
+Ringly firebase app
+
+
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyCcbxQJt551FouL-RrlJMbPZVS2dzHG-2s",
+  authDomain: "cringtoneapp.firebaseapp.com",
+  databaseURL: "https://cringtoneapp-default-rtdb.firebaseio.com",
+  projectId: "cringtoneapp",
+  storageBucket: "cringtoneapp.appspot.com",
+  messagingSenderId: "39436310215",
+  appId: "1:39436310215:web:f72df8b85c929d9c1e50e2",
+  measurementId: "G-V8E5PS11KD"
+};
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
