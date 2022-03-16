@@ -24,8 +24,11 @@
                       <th>
                         Category
                       </th>
-                      <th class="text-right">
+                      <th>
                         Ringtone
+                      </th>
+                      <th class="text-right">
+                        Delete
                       </th>
                     </thead>
                     <tbody>
@@ -44,6 +47,9 @@
                             <source src="{{val.ringtoneLink}}" type="audio/mpeg">
                                 Your browser does not support the audio element.
                           </audio> 
+                        </td>
+                        <td class="text-right">
+                          <a class="waves-effect waves-light btn" href="/delete/{{key}}/Ringtone/list_ringtone/">Delete</a>
                         </td>
                       </tr>                      
                       {% endfor %}

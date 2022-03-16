@@ -98,6 +98,17 @@ def add_ringtone(request):
 		return redirect('list_ringtone')
 	return render(request, template_name,locals())
 
+
+
+def delete_obj(request,uid,key,url):
+	token_id = request.session['uid']
+	user_obj = db.child(key).child(uid)
+	user_obj.remove(token_id)
+	return redirect(url)
+
+# /delete/{{key}}/user/dashboard/
+
+
 # ringtoneCategory:
 
 # ringtoneCategoryId:
