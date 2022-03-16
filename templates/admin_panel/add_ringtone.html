@@ -29,7 +29,12 @@
                     <div class="col-md-6 px-1">
                       <div class="form-group">
                         <label>Ringtone Category </label>
-                        <input type="text" class="form-control" name="ringtone_category_id" placeholder="ringtone category" required="true">
+                        <!-- <input type="text" class="form-control" name="ringtone_category_id" placeholder="ringtone category" required="true"> -->
+                        <select name="ringtone_category_id" class="form-control" id="select-state" placeholder="Ringtone Category">
+                          {% for key,val in all_category.items  %}
+                          <option value="{{val.ringtoneCategory}}">{{val.ringtoneCategory}}</option>
+                        {% endfor %}
+                      </select>
                       </div>
                     </div>
                 </div>

@@ -80,6 +80,7 @@ def list_ringtone(request):
 def add_ringtone(request):
 	token_id = request.session['uid']
 	template_name = 'admin_panel/add_ringtone.html'
+	all_category = dict(db.child("RingtoneCategory").get(token_id).val()) #ringtoneCategory
 	if request.method=='POST':
 		name = request.POST.get('name')
 		category_id = request.POST.get('ringtone_category_id')
