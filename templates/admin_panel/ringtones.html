@@ -27,6 +27,9 @@
                       <th>
                         Ringtone
                       </th>
+                      <th>
+                        Edit
+                      </th>
                       <th class="text-right">
                         Delete
                       </th>
@@ -41,12 +44,15 @@
                         {{val.ringtoneCategory}}
                         </td>
                        
-                        <td class="text-right">
+                        <td>
                         <!-- <a style="background-color:  #f64823" class="waves-effect waves-light btn" href="/delete/{{key}}/user/dashboard/">delete</a> -->
                         <audio controls>
                             <source src="{{val.ringtoneLink}}" type="audio/mpeg">
                                 Your browser does not support the audio element.
                           </audio> 
+                        </td>
+                        <td>
+                          <a class="waves-effect waves-light btn" href="/edit/{{key}}/Ringtone/list_ringtone/">Edit</a>
                         </td>
                         <td class="text-right">
                           <a class="waves-effect waves-light btn" href="/delete/{{key}}/Ringtone/list_ringtone/">Delete</a>

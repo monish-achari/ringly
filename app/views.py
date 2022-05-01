@@ -84,7 +84,8 @@ def add_ringtone(request):
 	if request.method=='POST':
 		name = request.POST.get('name')
 		category_id = request.POST.get('ringtone_category_id')
-		category_name = request.POST.get('ringtone_category_id')
+		category_name = all_category.get(category_id).get("ringtoneCategory")
+		# category_name = request.POST.get('ringtone_category_id')
 		ring_url = request.POST.get('url')
 		ring_dict = {
 			"ringtoneName":name,
@@ -99,13 +100,32 @@ def add_ringtone(request):
 	return render(request, template_name,locals())
 
 
-
-def delete_obj(request,uid,key,url):
+def edit_obj(request,uid,key,url):
+	template_name = 'admin_panel/edit_ringtone.html'
 	token_id = request.session['uid']
-	user_obj = db.child(key).child(uid)
-	user_obj.remove(token_id)
-	return redirect(url)
+	# user_obj = db.child(key).child(uid)
+	ring_dict = dict(db.child('Ringtone').child(uid).get(token_id).val())
+	all_category = dict(db.child("RingtoneCategory").get(token_id).val()) #ringtoneCategory
+	if request.method == "POST":
+		ring_obj = db.child('Ringtone').child(uid)
+		name = request.POST.get('name')
+		category_id = request.POST.get('ringtone_category_id')
+		category_name = all_category.get(category_id).get("ringtoneCategory")
+		# category_name = request.POST.get('ringtone_category_id')
+		ring_url = request.POST.get('url')
+		ring_dict_new = {
+			"ringtoneName":name,
+			"ringtoneCreatedDate":str(dt.datetime.now()),
+			"ringtoneModifiedDate":str(dt.datetime.now()),
+			"ringtoneLink":ring_url,
+			"ringtoneCategory":category_name,
+			"ringtoneCategoryId":category_id
+		}
+		ring_dict.update(ring_dict_new)
+		ring_obj.update(ring_dict_new,token_id)
+		return redirect(url)
 
+	return render(request,template_name,locals())
 # /delete/{{key}}/user/dashboard/
 
 
